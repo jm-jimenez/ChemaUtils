@@ -13,7 +13,7 @@ public protocol Resolver {
 }
 
 public protocol Injector {
-    func register<Dependency, Implementation: Injectable>(type: Dependency.Type, with dependency: Implementation.Type)
+    func register<Dependency>(type: Dependency.Type, with dependency: @escaping () -> Dependency)
 }
 
 public final class DefaultDependencyResolver: Resolver, Injector {
@@ -23,27 +23,23 @@ public final class DefaultDependencyResolver: Resolver, Injector {
     
     public func resolve<Dependency>() -> Dependency {
         guard let registered = registeredDependencies[String(describing: Dependency.self)] else { fatalError("Nothing registered") }
+        guard let registered = registered as? () -> Dependency else { fatalError() }
+        return registered()
+    }
+    
+    public func resolve<Dependency>(type: Dependency.Type) -> Dependency {
+        guard let registered = registeredDependencies[String(describing: type)] else { fatalError("Nothing registered") }
         guard let casted = registered as? Dependency else { fatalError("Type missmatch") }
         return casted
     }
     
-    public func resolve<Dependecy>(type: Dependecy.Type) -> Dependecy {
-        guard let registered = registeredDependencies[String(describing: type)] else { fatalError("Nothing registered") }
-        guard let casted = registered as? Dependecy else { fatalError("Type missmatch") }
-        return casted
-    }
-    
-    public func register<Dependency, Implementation: Injectable>(type: Dependency.Type, with dependency: Implementation.Type) {
-        registeredDependencies[String(describing: type)] = dependency.init()
+    public func register<Dependency>(type: Dependency.Type, with provider: @escaping () -> Dependency) {
+        registeredDependencies[String(describing: type)] = provider
     }
 }
 
-public func registerDependency<Dependency, Implementation: Injectable>(_ type: Dependency.Type, _ with: Implementation.Type) {
+public func registerDependency<Dependency>(_ type: Dependency.Type, _ with: @escaping () -> Dependency) {
     DefaultDependencyResolver.shared.register(type: type, with: with)
-}
-
-public protocol Injectable: AnyObject {
-    init()
 }
 
 @propertyWrapper

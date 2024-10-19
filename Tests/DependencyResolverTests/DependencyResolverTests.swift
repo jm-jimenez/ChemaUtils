@@ -10,7 +10,9 @@ import DependencyResolver
 
 final class DependencyResolverTests: XCTestCase {
     func testInjectedDependencyIsResolved() {
-        registerDependency(TestProtocol.self, TestClass.self)
+        registerDependency(TestProtocol.self) {
+            TestClass()
+        }
         let mock = InjectedMock()
         XCTAssertNotNil(mock.test)
         XCTAssertTrue(mock.test is TestClass)
