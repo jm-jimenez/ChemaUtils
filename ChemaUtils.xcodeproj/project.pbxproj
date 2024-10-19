@@ -6,36 +6,64 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1ACAB87F2CC3871000115F09 /* DependencyResolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACAB85D2CC37AAF00115F09 /* DependencyResolver.framework */; platformFilter = ios; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1ACAB8802CC3871000115F09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ACAB8422CC37A7600115F09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1ACAB85C2CC37AAF00115F09;
+			remoteInfo = DependencyResolver;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		1ACAB84B2CC37A7600115F09 /* ChemaUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChemaUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ACAB85D2CC37AAF00115F09 /* DependencyResolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependencyResolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ACAB87B2CC3871000115F09 /* DependencyResolverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DependencyResolverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1ACAB8522CC37A7600115F09 /* Exceptions for "ChemaUtils" folder in "ChemaUtils" target */ = {
+		1ACAB8632CC37AAF00115F09 /* Exceptions for "DependencyResolver" folder in "DependencyResolver" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			publicHeaders = (
-				ChemaUtils.h,
+				DependencyResolver.h,
 			);
-			target = 1ACAB84A2CC37A7600115F09 /* ChemaUtils */;
+			target = 1ACAB85C2CC37AAF00115F09 /* DependencyResolver */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		1ACAB84D2CC37A7600115F09 /* ChemaUtils */ = {
+		1ACAB85E2CC37AAF00115F09 /* DependencyResolver */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				1ACAB8522CC37A7600115F09 /* Exceptions for "ChemaUtils" folder in "ChemaUtils" target */,
+				1ACAB8632CC37AAF00115F09 /* Exceptions for "DependencyResolver" folder in "DependencyResolver" target */,
 			);
-			path = ChemaUtils;
+			path = DependencyResolver;
+			sourceTree = "<group>";
+		};
+		1ACAB87C2CC3871000115F09 /* DependencyResolverTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DependencyResolverTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1ACAB8482CC37A7600115F09 /* Frameworks */ = {
+		1ACAB85A2CC37AAF00115F09 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ACAB8782CC3871000115F09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1ACAB87F2CC3871000115F09 /* DependencyResolver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +73,8 @@
 		1ACAB8412CC37A7600115F09 = {
 			isa = PBXGroup;
 			children = (
-				1ACAB84D2CC37A7600115F09 /* ChemaUtils */,
+				1ACAB85E2CC37AAF00115F09 /* DependencyResolver */,
+				1ACAB87C2CC3871000115F09 /* DependencyResolverTests */,
 				1ACAB84C2CC37A7600115F09 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,7 +82,8 @@
 		1ACAB84C2CC37A7600115F09 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1ACAB84B2CC37A7600115F09 /* ChemaUtils.framework */,
+				1ACAB85D2CC37AAF00115F09 /* DependencyResolver.framework */,
+				1ACAB87B2CC3871000115F09 /* DependencyResolverTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,7 +91,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1ACAB8462CC37A7600115F09 /* Headers */ = {
+		1ACAB8582CC37AAF00115F09 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -71,28 +101,51 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1ACAB84A2CC37A7600115F09 /* ChemaUtils */ = {
+		1ACAB85C2CC37AAF00115F09 /* DependencyResolver */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1ACAB8532CC37A7600115F09 /* Build configuration list for PBXNativeTarget "ChemaUtils" */;
+			buildConfigurationList = 1ACAB8642CC37AAF00115F09 /* Build configuration list for PBXNativeTarget "DependencyResolver" */;
 			buildPhases = (
-				1ACAB8462CC37A7600115F09 /* Headers */,
-				1ACAB8472CC37A7600115F09 /* Sources */,
-				1ACAB8482CC37A7600115F09 /* Frameworks */,
-				1ACAB8492CC37A7600115F09 /* Resources */,
+				1ACAB8582CC37AAF00115F09 /* Headers */,
+				1ACAB8592CC37AAF00115F09 /* Sources */,
+				1ACAB85A2CC37AAF00115F09 /* Frameworks */,
+				1ACAB85B2CC37AAF00115F09 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				1ACAB84D2CC37A7600115F09 /* ChemaUtils */,
+				1ACAB85E2CC37AAF00115F09 /* DependencyResolver */,
 			);
-			name = ChemaUtils;
+			name = DependencyResolver;
 			packageProductDependencies = (
 			);
-			productName = ChemaUtils;
-			productReference = 1ACAB84B2CC37A7600115F09 /* ChemaUtils.framework */;
+			productName = DependencyResolver;
+			productReference = 1ACAB85D2CC37AAF00115F09 /* DependencyResolver.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		1ACAB87A2CC3871000115F09 /* DependencyResolverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ACAB8822CC3871000115F09 /* Build configuration list for PBXNativeTarget "DependencyResolverTests" */;
+			buildPhases = (
+				1ACAB8772CC3871000115F09 /* Sources */,
+				1ACAB8782CC3871000115F09 /* Frameworks */,
+				1ACAB8792CC3871000115F09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1ACAB8812CC3871000115F09 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1ACAB87C2CC3871000115F09 /* DependencyResolverTests */,
+			);
+			name = DependencyResolverTests;
+			packageProductDependencies = (
+			);
+			productName = DependencyResolverTests;
+			productReference = 1ACAB87B2CC3871000115F09 /* DependencyResolverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,9 +154,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					1ACAB84A2CC37A7600115F09 = {
+					1ACAB85C2CC37AAF00115F09 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					1ACAB87A2CC3871000115F09 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
@@ -122,13 +179,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1ACAB84A2CC37A7600115F09 /* ChemaUtils */,
+				1ACAB85C2CC37AAF00115F09 /* DependencyResolver */,
+				1ACAB87A2CC3871000115F09 /* DependencyResolverTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1ACAB8492CC37A7600115F09 /* Resources */ = {
+		1ACAB85B2CC37AAF00115F09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ACAB8792CC3871000115F09 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,7 +203,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1ACAB8472CC37A7600115F09 /* Sources */ = {
+		1ACAB8592CC37AAF00115F09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ACAB8772CC3871000115F09 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -147,73 +219,16 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1ACAB8812CC3871000115F09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 1ACAB85C2CC37AAF00115F09 /* DependencyResolver */;
+			targetProxy = 1ACAB8802CC3871000115F09 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		1ACAB8542CC37A7600115F09 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 85YP73WK35;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appoteosis.ChemaUtils;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		1ACAB8552CC37A7600115F09 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 85YP73WK35;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appoteosis.ChemaUtils;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		1ACAB8562CC37A7600115F09 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -339,6 +354,112 @@
 			};
 			name = Release;
 		};
+		1ACAB8652CC37AAF00115F09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 85YP73WK35;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appoteosis.DependencyResolver;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1ACAB8662CC37AAF00115F09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 85YP73WK35;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appoteosis.DependencyResolver;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		1ACAB8832CC3871000115F09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 85YP73WK35;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appoteosis.DependencyResolverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1ACAB8842CC3871000115F09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 85YP73WK35;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appoteosis.DependencyResolverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -351,11 +472,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1ACAB8532CC37A7600115F09 /* Build configuration list for PBXNativeTarget "ChemaUtils" */ = {
+		1ACAB8642CC37AAF00115F09 /* Build configuration list for PBXNativeTarget "DependencyResolver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1ACAB8542CC37A7600115F09 /* Debug */,
-				1ACAB8552CC37A7600115F09 /* Release */,
+				1ACAB8652CC37AAF00115F09 /* Debug */,
+				1ACAB8662CC37AAF00115F09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1ACAB8822CC3871000115F09 /* Build configuration list for PBXNativeTarget "DependencyResolverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ACAB8832CC3871000115F09 /* Debug */,
+				1ACAB8842CC3871000115F09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
