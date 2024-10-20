@@ -1,0 +1,41 @@
+{
+  "configurations" : [
+    {
+      "id" : "1AE5D801-F322-4129-AFC9-EDD636B0F5D8",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:ChemaUtils.xcodeproj",
+        "identifier" : "1ACAB87A2CC3871000115F09",
+        "name" : "DependencyResolverTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:ChemaUtils.xcodeproj",
+        "identifier" : "1A403C222CC4E03600F5236A",
+        "name" : "UtilsTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:ChemaUtils.xcodeproj",
+        "identifier" : "1AC99C8E2CC3A00100A81108",
+        "name" : "NavigationTests"
+      }
+    }
+  ],
+  "version" : 1
+}

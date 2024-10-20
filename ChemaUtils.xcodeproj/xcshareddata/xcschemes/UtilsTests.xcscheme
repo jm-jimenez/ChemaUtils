@@ -21,12 +21,12 @@
       <Testables>
          <TestableReference
             skipped = "NO"
-            parallelizable = "YES">
+            parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1ACAB87A2CC3871000115F09"
-               BuildableName = "DependencyResolverTests.xctest"
-               BlueprintName = "DependencyResolverTests"
+               BlueprintIdentifier = "1A403C222CC4E03600F5236A"
+               BuildableName = "UtilsTests.xctest"
+               BlueprintName = "UtilsTests"
                ReferencedContainer = "container:ChemaUtils.xcodeproj">
             </BuildableReference>
          </TestableReference>

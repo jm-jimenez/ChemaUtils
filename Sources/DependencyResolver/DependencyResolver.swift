@@ -29,12 +29,16 @@ public final class DefaultDependencyResolver: Resolver, Injector {
     
     public func resolve<Dependency>(type: Dependency.Type) -> Dependency {
         guard let registered = registeredDependencies[String(describing: type)] else { fatalError("Nothing registered") }
-        guard let casted = registered as? Dependency else { fatalError("Type missmatch") }
-        return casted
+        guard let casted = registered as? () -> Dependency else { fatalError("Type missmatch") }
+        return casted()
     }
     
     public func register<Dependency>(type: Dependency.Type, with provider: @escaping () -> Dependency) {
         registeredDependencies[String(describing: type)] = provider
+    }
+
+    public func clear() {
+        registeredDependencies.removeAll()
     }
 }
 
