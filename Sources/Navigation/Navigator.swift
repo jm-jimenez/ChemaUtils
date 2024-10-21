@@ -11,7 +11,7 @@ public final class Navigator {
     public static let shared = Navigator()
     public weak var navigationController: UINavigationController?
 
-    public func pushVC(_ vc: UIViewController) {
-        navigationController?.pushViewController(vc, animated: true)
+    public func pushVC(_ viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

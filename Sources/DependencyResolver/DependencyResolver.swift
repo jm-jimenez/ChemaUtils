@@ -20,19 +20,23 @@ public final class DefaultDependencyResolver: Resolver, Injector {
 
     public static let shared = DefaultDependencyResolver()
     private var registeredDependencies: [String: Any] = [:]
-    
+
     public func resolve<Dependency>() -> Dependency {
-        guard let registered = registeredDependencies[String(describing: Dependency.self)] else { fatalError("Nothing registered") }
+        guard let registered = registeredDependencies[String(describing: Dependency.self)] else {
+            fatalError("Nothing registered")
+        }
         guard let registered = registered as? () -> Dependency else { fatalError() }
         return registered()
     }
-    
+
     public func resolve<Dependency>(type: Dependency.Type) -> Dependency {
-        guard let registered = registeredDependencies[String(describing: type)] else { fatalError("Nothing registered") }
+        guard let registered = registeredDependencies[String(describing: type)] else {
+            fatalError("Nothing registered")
+        }
         guard let casted = registered as? () -> Dependency else { fatalError("Type missmatch") }
         return casted()
     }
-    
+
     public func register<Dependency>(type: Dependency.Type, with provider: @escaping () -> Dependency) {
         registeredDependencies[String(describing: type)] = provider
     }
