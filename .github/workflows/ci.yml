@@ -6,18 +6,15 @@ on:
 
 jobs:
   build:
-    name: Build and Test
+    name: Test
     runs-on: self-hosted
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Build
-        run: |
-          xcodebuild -scheme ChemaUtils -destination 'generic/platform=iOS Simulator' | xcpretty
       - name: Test
         run: |
-          xcodebuild test -scheme ChemaUtilsTests -destination 'platform=iOS Simulator,OS=17.0,name=iPhone 11' | xcpretty
+          xcodebuild test -scheme UtilsTests -destination 'platform=iOS Simulator,OS=17.0,name=iPhone 11' | xcpretty
 
   swiftlint:
     name: Swiftlint
