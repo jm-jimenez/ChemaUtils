@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ "main", "release/**"]
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build
+        run: |
+          xcodebuild -scheme ChemaUtils -destination 'generic/platform=iOS Simulator' | xcpretty
+      - name: Test
+        run: |
+          xcodebuild test -scheme ChemaUtilsTests -destination 'platform=iOS Simulator,OS=17.0,name=iPhone 11' | xcpretty
+
+  swiftlint:
+    name: Swiftlint
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Linting
+        run: swiftlint --config .swiftlint.yml
+
+  clear:
+    name: Clear
+    needs: [build, swiftlint]
+    if: always()
+    runs-on: self-hosted
+    steps:
+      - name: Clean up
+        run: cd ../.. && rm -rf SwiftCV
