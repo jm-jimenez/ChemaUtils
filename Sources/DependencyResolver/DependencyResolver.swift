@@ -35,8 +35,13 @@ public final class DefaultDependencyResolver: Resolver, Injector {
         guard let registered = registeredDependencies[String(describing: Dependency.self)] else {
             throw DependencyResolverErrors.nothingRegistered
         }
-        guard let registered = registered as? () -> Dependency else { fatalError() }
-        return registered()
+        guard let casted = registered as? () -> Dependency else {
+            guard let casted = registered as? InjectableCapable.Type else {
+                throw DependencyResolverErrors.typeMismatch
+            }
+            return (casted.init() as? Dependency)!
+        }
+        return casted()
     }
 
     public func resolve<Dependency>(type: Dependency.Type) throws -> Dependency {
