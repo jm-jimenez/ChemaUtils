@@ -24,11 +24,26 @@ final class DependencyResolverTests: XCTestCase {
         XCTAssertTrue(mock.test is TestClass)
     }
 
-    func testResolveForType() {
+    func testResolveForType() throws {
         registerDependency(TestProtocol.self) {
             TestClass()
         }
-        let resolve = DefaultDependencyResolver.shared.resolve(type: TestProtocol.self)
+        let resolve = try DefaultDependencyResolver.shared.resolve(type: TestProtocol.self)
         XCTAssertTrue(resolve is TestClass)
+    }
+
+    func testResolveWithInjectable() throws {
+        registerDependency(TestProtocol.self, TestClass.self)
+        let resolve = try DefaultDependencyResolver.shared.resolve(type: TestProtocol.self)
+        print(resolve)
+    }
+
+    func testNotRegisteredResolveShouldFail() {
+        XCTAssertThrowsError(try DefaultDependencyResolver.shared.resolve(type: TestProtocol.self))
+        do {
+            let _: TestProtocol = try DefaultDependencyResolver.shared.resolve()
+        } catch {
+            XCTAssertTrue(error is DependencyResolverErrors)
+        }
     }
 }

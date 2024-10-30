@@ -10,7 +10,7 @@ import DependencyResolver
 
 protocol TestProtocol { }
 
-final class TestClass: TestProtocol { }
+final class TestClass: TestProtocol, InjectableCapable { }
 
 struct InjectedMock {
     @Injected var test: TestProtocol
