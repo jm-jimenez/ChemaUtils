@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 5.9
 //
 //  Package.swift
 //  ChemaUtils
@@ -31,7 +31,8 @@ let package = Package(
             name: "Navigation"
         ),
         .target(
-            name: "Utils"
+            name: "Utils",
+            dependencies: ["DependencyResolver"]
         ),
         .testTarget(
             name: "DependencyResolverTests",

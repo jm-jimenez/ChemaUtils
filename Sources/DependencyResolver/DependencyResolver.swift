@@ -28,7 +28,7 @@ public enum DependencyResolverErrors: Error {
 
 public final class DefaultDependencyResolver: Resolver, Injector {
 
-    nonisolated(unsafe) public static let shared = DefaultDependencyResolver()
+    public static let shared = DefaultDependencyResolver()
     private var registeredDependencies: [String: Any] = [:]
 
     public func resolve<Dependency>() throws -> Dependency {
