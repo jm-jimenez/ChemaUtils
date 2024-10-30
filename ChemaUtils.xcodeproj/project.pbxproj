@@ -15,7 +15,7 @@
 		1A3CB0DF2CC396BD00B08AEA /* DependencyResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A3CB0B52CC3946900B08AEA /* DependencyResolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A403C242CC4E03600F5236A /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A403C1A2CC4E03600F5236A /* Utils.framework */; };
 		1AC99C902CC3A00100A81108 /* Navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC99C862CC3A00000A81108 /* Navigation.framework */; };
-		1ACAB87F2CC3871000115F09 /* DependencyResolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACAB85D2CC37AAF00115F09 /* DependencyResolver.framework */; platformFilter = ios; };
+		1ACAB87F2CC3871000115F09 /* DependencyResolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACAB85D2CC37AAF00115F09 /* DependencyResolver.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,19 +26,19 @@
 			remoteGlobalIDString = 1A403C192CC4E03600F5236A;
 			remoteInfo = Utils;
 		};
+		1AB00D9C2CD277A700806BD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ACAB8422CC37A7600115F09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1ACAB85C2CC37AAF00115F09;
+			remoteInfo = DependencyResolver;
+		};
 		1AC99C912CC3A00100A81108 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1ACAB8422CC37A7600115F09 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1AC99C852CC3A00000A81108;
 			remoteInfo = Navigation;
-		};
-		1ACAB8802CC3871000115F09 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1ACAB8422CC37A7600115F09 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1ACAB85C2CC37AAF00115F09;
-			remoteInfo = DependencyResolver;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -372,8 +372,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				1AB00D9D2CD277A700806BD8 /* PBXTargetDependency */,
 				1AE28AF52CC6BECF00E18C97 /* PBXTargetDependency */,
-				1ACAB8812CC3871000115F09 /* PBXTargetDependency */,
 			);
 			name = DependencyResolverTests;
 			packageProductDependencies = (
@@ -540,16 +540,16 @@
 			target = 1A403C192CC4E03600F5236A /* Utils */;
 			targetProxy = 1A403C252CC4E03600F5236A /* PBXContainerItemProxy */;
 		};
+		1AB00D9D2CD277A700806BD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 1ACAB85C2CC37AAF00115F09 /* DependencyResolver */;
+			targetProxy = 1AB00D9C2CD277A700806BD8 /* PBXContainerItemProxy */;
+		};
 		1AC99C922CC3A00100A81108 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1AC99C852CC3A00000A81108 /* Navigation */;
 			targetProxy = 1AC99C912CC3A00100A81108 /* PBXContainerItemProxy */;
-		};
-		1ACAB8812CC3871000115F09 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 1ACAB85C2CC37AAF00115F09 /* DependencyResolver */;
-			targetProxy = 1ACAB8802CC3871000115F09 /* PBXContainerItemProxy */;
 		};
 		1AE28AF32CC6BEC800E18C97 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
