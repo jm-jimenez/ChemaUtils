@@ -17,7 +17,7 @@ public protocol Injector {
     func register<Dependency, Injectable: InjectableCapable>(type: Dependency.Type, with injectable: Injectable.Type)
 }
 
-public protocol InjectableCapable: AnyObject {
+public protocol InjectableCapable {
     init()
 }
 
