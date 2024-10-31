@@ -22,6 +22,6 @@ public enum LanguageType: String {
     }
 
     public var icon: UIImage? {
-        UIImage(named: "\(rawValue).svg", in: Bundle.module , with: nil)
+        UIImage(named: "\(rawValue).svg", in: Bundle.module, with: nil)
     }
 }
