@@ -488,6 +488,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				1AE28AF12CC6BEB500E18C97 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				1AFFCC302CD401AE00B6DAFE /* XCLocalSwiftPackageReference "../ChemaUtils" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1ACAB84C2CC37A7600115F09 /* Products */;
@@ -1292,6 +1293,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		1AFFCC302CD401AE00B6DAFE /* XCLocalSwiftPackageReference "../ChemaUtils" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../ChemaUtils;
+		};
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		1AE28AF12CC6BEB500E18C97 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
