@@ -48,7 +48,7 @@ let package = Package(
             dependencies: ["Navigation"]),
         .testTarget(
             name: "UtilsTests",
-            dependencies: ["Utils"]
+            dependencies: ["Utils", "DependencyResolver"]
         )
     ]
 )
