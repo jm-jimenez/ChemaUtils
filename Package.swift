@@ -16,7 +16,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "ChemaUtils",
-            targets: ["DependencyResolver", "Navigation", "Utils"])
+            targets: ["DependencyResolver", "Navigation", "Utils", "Language"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -33,6 +33,12 @@ let package = Package(
         .target(
             name: "Utils",
             dependencies: ["DependencyResolver"]
+        ),
+        .target(
+            name: "Language",
+            resources: [
+                .process("Resources/")
+            ]
         ),
         .testTarget(
             name: "DependencyResolverTests",
