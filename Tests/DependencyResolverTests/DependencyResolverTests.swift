@@ -46,4 +46,22 @@ final class DependencyResolverTests: XCTestCase {
             XCTAssertTrue(error is DependencyResolverErrors)
         }
     }
+
+    func testRetrieveAllTypes() {
+        registerDependency(TestProtocol.self, TestClass.self)
+        registerDependency(TestProtocol.self, AnotherTestClass.self)
+        let result = DefaultDependencyResolver.shared.resolveAllTypes(of: TestProtocol.self)
+        XCTAssertEqual(2, result.count)
+    }
+
+    func testRetrieveAllTypesWithClosure() {
+        registerDependency(TestProtocol.self) {
+            TestClass()
+        }
+        registerDependency(TestProtocol.self) {
+            AnotherTestClass()
+        }
+        let result = DefaultDependencyResolver.shared.resolveAllTypes(of: TestProtocol.self)
+        XCTAssertEqual(2, result.count)
+    }
 }

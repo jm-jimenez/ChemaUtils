@@ -29,10 +29,10 @@ public enum DependencyResolverErrors: Error {
 public final class DefaultDependencyResolver: Resolver, Injector {
 
     public static let shared = DefaultDependencyResolver()
-    private var registeredDependencies: [String: Any] = [:]
+    private var registeredDependencies: [String: [Any]] = [:]
 
     public func resolve<Dependency>() throws -> Dependency {
-        guard let registered = registeredDependencies[String(describing: Dependency.self)] else {
+        guard let registered = registeredDependencies[String(describing: Dependency.self)]?.first else {
             throw DependencyResolverErrors.nothingRegistered
         }
         guard let casted = registered as? () -> Dependency else {
@@ -45,7 +45,7 @@ public final class DefaultDependencyResolver: Resolver, Injector {
     }
 
     public func resolve<Dependency>(type: Dependency.Type) throws -> Dependency {
-        guard let registered = registeredDependencies[String(describing: type)] else {
+        guard let registered = registeredDependencies[String(describing: type)]?.first else {
             throw DependencyResolverErrors.nothingRegistered
         }
         guard let casted = registered as? () -> Dependency else {
@@ -58,16 +58,34 @@ public final class DefaultDependencyResolver: Resolver, Injector {
     }
 
     public func register<Dependency>(type: Dependency.Type, with provider: @escaping () -> Dependency) {
-        registeredDependencies[String(describing: type)] = provider
+        var registered = registeredDependencies[String(describing: type)] ?? []
+        registered.append(provider)
+        registeredDependencies[String(describing: type)] = registered
     }
 
     // swiftlint:disable:next line_length
     public func register<Dependency, Injectable: InjectableCapable>(type: Dependency.Type, with injectable: Injectable.Type) {
-        registeredDependencies[String(describing: type)] = injectable
+        var registered = registeredDependencies[String(describing: type)] ?? []
+        registered.append(injectable)
+        registeredDependencies[String(describing: type)] = registered
     }
 
     public func clear() {
         registeredDependencies.removeAll()
+    }
+
+    public func resolveAllTypes<Dependency>(of type: Dependency.Type) -> [Dependency] {
+        var matches: [Dependency] = []
+        guard let values = registeredDependencies[String(describing: type)] else { return matches }
+        values.forEach {
+            if let injectable = $0 as? InjectableCapable.Type,
+               let instance = injectable.init() as? Dependency {
+                matches.append(instance)
+            } else if let closure = $0 as? () -> Dependency {
+                matches.append(closure())
+            }
+        }
+        return matches
     }
 }
 

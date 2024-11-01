@@ -15,3 +15,5 @@ final class TestClass: TestProtocol, InjectableCapable { }
 struct InjectedMock {
     @Injected var test: TestProtocol
 }
+
+final class AnotherTestClass: TestProtocol, InjectableCapable { }
