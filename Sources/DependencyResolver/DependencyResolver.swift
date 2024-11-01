@@ -82,7 +82,7 @@ public func registerDependency<Dependency, Injectable: InjectableCapable>(_ type
 
 @propertyWrapper
 public struct Injected<Value> {
-    private(set) public var wrappedValue: Value
+    public var wrappedValue: Value
 
     public init() {
         do {
