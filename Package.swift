@@ -62,7 +62,7 @@ let package = Package(
         ),
         .testTarget(
             name: "NavigationTests",
-            dependencies: ["Navigation"],
+            dependencies: ["Navigation", "DependencyResolver"],
             plugins: [
                 .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")
             ]
