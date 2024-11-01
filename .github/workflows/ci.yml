@@ -15,7 +15,7 @@ jobs:
       - name: Test
         run: |
           set -o pipefail
-          xcodebuild test -scheme UtilsTests -destination 'platform=iOS Simulator,OS=17.0,name=iPhone 11' -testPlan TestPlan | xcpretty
+          xcodebuild test -scheme ChemaUtils -destination 'platform=iOS Simulator,OS=17.0,name=iPhone 11' -testPlan TestPlan | xcpretty
 
   swiftlint:
     name: Swiftlint

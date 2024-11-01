@@ -15,25 +15,25 @@
     {
       "parallelizable" : false,
       "target" : {
-        "containerPath" : "container:ChemaUtils.xcodeproj",
-        "identifier" : "1ACAB87A2CC3871000115F09",
-        "name" : "DependencyResolverTests"
+        "containerPath" : "container:",
+        "identifier" : "NavigationTests",
+        "name" : "NavigationTests"
       }
     },
     {
       "parallelizable" : false,
       "target" : {
-        "containerPath" : "container:ChemaUtils.xcodeproj",
-        "identifier" : "1A403C222CC4E03600F5236A",
+        "containerPath" : "container:",
+        "identifier" : "UtilsTests",
         "name" : "UtilsTests"
       }
     },
     {
       "parallelizable" : false,
       "target" : {
-        "containerPath" : "container:ChemaUtils.xcodeproj",
-        "identifier" : "1AC99C8E2CC3A00100A81108",
-        "name" : "NavigationTests"
+        "containerPath" : "container:",
+        "identifier" : "DependencyResolverTests",
+        "name" : "DependencyResolverTests"
       }
     }
   ],
