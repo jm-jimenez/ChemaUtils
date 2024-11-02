@@ -15,7 +15,7 @@ jobs:
       - name: Build
         run: |
           set -o pipefail
-          xcodebuild build -scheme ChemaUtils -destination 'platform=generic/iOS Simulator' | xcpretty
+          xcodebuild build -scheme ChemaUtils -destination 'generic/platform=iOS Simulator' | xcpretty
       - name: Test
         run: |
           set -o pipefail
