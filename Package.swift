@@ -33,6 +33,7 @@ let package = Package(
         ),
         .target(
             name: "Navigation",
+            dependencies: ["DependencyResolver"],
             plugins: [
                 .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")
             ]
