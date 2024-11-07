@@ -35,7 +35,6 @@ final class DependencyResolverTests: XCTestCase {
     func testResolveWithInjectable() throws {
         registerDependency(TestProtocol.self, TestClass.self)
         let resolve = try DefaultDependencyResolver.shared.resolve(type: TestProtocol.self)
-        print(resolve)
     }
 
     func testNotRegisteredResolveShouldFail() {

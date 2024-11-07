@@ -32,7 +32,7 @@ public final class DefaultDependencyResolver: Resolver, Injector {
     private var registeredDependencies: [String: [Any]] = [:]
 
     public func resolve<Dependency>() throws -> Dependency {
-        guard let registered = registeredDependencies[String(describing: Dependency.self)]?.first else {
+        guard let registered = registeredDependencies[String(describing: Dependency.self)]?.last else {
             throw DependencyResolverErrors.nothingRegistered
         }
         guard let casted = registered as? () -> Dependency else {
@@ -45,7 +45,7 @@ public final class DefaultDependencyResolver: Resolver, Injector {
     }
 
     public func resolve<Dependency>(type: Dependency.Type) throws -> Dependency {
-        guard let registered = registeredDependencies[String(describing: type)]?.first else {
+        guard let registered = registeredDependencies[String(describing: type)]?.last else {
             throw DependencyResolverErrors.nothingRegistered
         }
         guard let casted = registered as? () -> Dependency else {
